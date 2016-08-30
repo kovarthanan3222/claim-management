@@ -1,15 +1,8 @@
 {
-	"description": "The CodeIgniter framework",
-	"name": "codeigniter/framework",
-	"type": "project",
-	"homepage": "https://codeigniter.com",
-	"license": "MIT",
-	"support": {
-		"forum": "http://forum.codeigniter.com/",
-		"wiki": "https://github.com/bcit-ci/CodeIgniter/wiki",
-		"irc": "irc://irc.freenode.net/codeigniter",
-		"source": "https://github.com/bcit-ci/CodeIgniter"
-	},
+	"description": "Develop RESTful web services required for the functioning of the Claims Manager application",
+	"name": "Claims Manager",
+	"type": "API",
+	"homepage": "http://localhost/claim-management-master/",
 	"require": {
 		"php": ">=5.2.4"
 	},
