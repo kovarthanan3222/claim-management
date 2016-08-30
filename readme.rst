@@ -1,70 +1,47 @@
 ###################
-What is CodeIgniter
+What is Claims Manager
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+Claims Manager application to
+be used from various frontend applications (Native Mobile / Web). It has to be a multitenant system,
+meaning multiple teams can use the same application.
 
 *******************
-Release Information
+Database Information
 *******************
+Import claim_mgmt.sql in your mysql database.
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+For more info related please refer "clamis_mgmt_db_design.png".
 
 **************************
-Changelog and New Features
+Features
 **************************
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+1. This application will be used by multiple teams in a company
+a. Each team will have two types of users. Finance Manager(FM), Employee
+b. Contents & Claims of a team can be accessed only by the members of the team.
+c. A member can belong to multiple teams.
+2. Team and User Management
+a. The application will have a provision for creating / editing teams, users
+b. A team can have only one FM and multiple employee
+c. Role of an user is specific to the team. i.e.) A Finance Manager in a team can be
+Employee in another team.
+3. Claims Management
+a. An employee in a team can add claims to the system which will be sent for approval.
+During adding new claims the employee has to provide
+1. Date
+2. Description of the claim
+3. Invoice copy upload (Image formats, DOC, XLS, PDF)
+b. The claim can be edited only if it is in new status.
+c. Following is the life cycle of an Claim.
+1. New / Draft
+2. Sent to Approval
+3. Approved / Rejected
+4. Settled
+d. The Finance Manager can review the claim and approve / reject it.
+e. There should be provision for the manager to view the list of Waiting approval
+approved, settled claims with the sum for each status.
+f. Manager cannot see the claim which are in new / draft version
+g. Employee can see the Claims added by him / her only.
 
-*******************
-Server Requirements
-*******************
 
-PHP version 5.6 or newer is recommended.
-
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
-
-************
-Installation
-************
-
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
-
-*******
-License
-*******
-
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
-
-*********
-Resources
-*********
-
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community IRC <https://webchat.freenode.net/?channels=%23codeigniter>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
